@@ -1,4 +1,4 @@
-# Automatic Skill Generation for Knowledge Graph Question Answering
+# Automatic Skill Generation for &nbsp; Knowledge Graph Question Answering
 
 It is a webpage presenting a community shared software framework to create custom extensions to query knowledge graphs by virtual assistants, unlocking the potentialities of the Semantic Web technologies by bringing knowledge graphs in the _"pocket"_ of everyone, accessible from smartphones or smart speakers. 
 
@@ -31,3 +31,30 @@ We model each supported SPARQL query template as an intent. Each intent is model
 
 According to users' skills, they can provide the generator with a custom configuration file. Otherwise, they can exploit the **generator configuration** component that takes as input the SPARQL endpoint of interest, automatically retrieves both classes and relations labels and their URIs, and returns the configuration file that can be directly used to initialize the VA generator.
 
+## Virtual Assistant Extension Usage
+
+In a ![VA-based process](img/KGQA_process.png), 
+1. users pose a question in NL by pronouncing or typing it via a VA app or dedicated device (e.g., Alexa app/device);
+2. Virtual Assistants are provided with a Natural Language processing component performing the **question analysis** task, which includes
+a. **_intent identification_** to recognize the intent matching user's request and solving intents slots;
+b. **_linking_** task to determine URIs corresponding to entities and relations labels. It can be accomplished by consulting a lookup dictionary or by calling an API service, at the moment.
+3. The Virtual Assistant extension back-end performs the **query formulation** task which is based on
+a. **_SPARQL query formulation_** to transform the user question in a SPARQL query,
+b. **_SPARQL query execution_** to run the SPARQL query over the configured SPARQL endpoint.
+4. The Virtual Assistant extension back-end performs the **reply formulation** task where
+a. the **_reply template identification_** phase aims to recognize the template to return the Natural Language reply,
+b. during the **_reply completition_**, the reply template is complited by actual results.
+5. The reply is returned to the user.
+
+## Use cases
+
+we propose a generic approach and we openly publish Virtual Assistant extensions for general purpose KGs (such as DBpedia and Wikidata) and Cultural Heritage Knowledge Graphs.
+[Use cases](https://github.com/mariaangelapellegrino/virtual_assistant_generator/use_cases) are available on GitHub and Zenodo.
+
+## Demo
+
+A [complete demo](./demo.md) to use the generator and the generated skill on DBpedia is freely available.
+
+## Citation
+
+This webpage behaves as a support material for the demo paper entitled _Automatic Skill Generation for Knowledge Graph Question Answering_, authored by Maria Angela Pellegrino, Mario Santoro, Vittorio Scarano, Carmine Spagnuolo (Univerità degli Studi di Salerno, Italy), at ESWC 2021. 
