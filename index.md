@@ -1,37 +1,33 @@
-## Welcome to GitHub Pages
+# Automatic Skill Generation for Knowledge Graph Question Answering
 
-You can use the [editor on GitHub](https://github.com/mariaangelapellegrino/VirtualAssistantExtensionsGenerator/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+It is a webpage presenting a community shared software framework to create custom extensions to query knowledge graphs by virtual assistants, unlocking the potentialities of the Semantic Web technologies by bringing knowledge graphs in the _"pocket"_ of everyone, accessible from smartphones or smart speakers. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The source code and documentation of the proposed generator is provided on [GitHub](https://github.com/mariaangelapellegrino/virtual_assistant_generator) and on [Zenodo](https://doi.org/10.5281/zenodo.4605951).
 
-### Markdown
+## The generator architecture
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The implemented process is graphically represented in ![process](img/generator_process.png).
 
-```markdown
-Syntax highlighted code block
+1. The generator takes as input a **configuration file**, which defines:
+a. the *SPARQL endpoint* of interest
+b. desired *language* (en and it are supported at the moment)
+c. the *invocation name* (i.e., the skill wake-up word)
+d. the list of *desired intents*.
+e. *entity and realtion dictionaries*
+2. The generator checks the **syntactical correctness** of the configuration file during the syntax checker phase.
+3. It validates the **semantic correctness** of the configuration during the validation.
+4. During the **interaction model generation**, it creates the interaction\_model.json which contains configured intents, its utterances and the slot values as defined in the configuration file.
+5. During the **back-end generation** phase, it produces the back-end (as ZIP file) containing the back-end logic implementation.
 
-# Header 1
-## Header 2
-### Header 3
+If any error occurs, the generator immediately stops and returns a message reporting the occurred error. If the configuration is properly provided, the generator returns a folder entitled as the skill wake-up word containing the interaction model as JSON file and the back-end Node.js code as a ZIP file. The generated skill is ready to be used, i.e., it can automatically be uploaded on Amazon developer and Amazon AWS, respectively. It corresponds to manually created skills, but our proposal may reduce required technical competencies and development time. 
 
-- Bulleted
-- List
+### Supported intents
 
-1. Numbered
-2. List
+The implemented intents are tailored towards SPARQL constructs, and they cover SELECT and ASK queries, class specification, numeric filters, order by to get the superlative and path traversal.
 
-**Bold** and _Italic_ and `Code` text
+We model each supported SPARQL query template as an intent. Each intent is modelled by a set of utterances and can be completed by slot values. A custom slot represents each slot, and it requires the specification of a (complete or partial) set of values that it can assume.
 
-[Link](url) and ![Image](src)
-```
+### Configuration options: *manual VS automatic*
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+According to users' skills, they can provide the generator with a custom configuration file. Otherwise, they can exploit the **generator configuration** component that takes as input the SPARQL endpoint of interest, automatically retrieves both classes and relations labels and their URIs, and returns the configuration file that can be directly used to initialize the VA generator.
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mariaangelapellegrino/VirtualAssistantExtensionsGenerator/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
