@@ -1,1 +1,5 @@
 theme: jekyll-theme-time-machine
+title: KGQA by VA
+github:
+  zip_url: https://doi.org/10.5281/zenodo.4605951
+  url: https://github.com/mariaangelapellegrino/virtual_assistant_generator
