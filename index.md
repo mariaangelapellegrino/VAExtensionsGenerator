@@ -5,9 +5,9 @@ It is a webpage presenting a community shared software framework to create custo
 The source code and documentation of the proposed generator is provided on 
 [GitHub](https://github.com/mariaangelapellegrino/virtual_assistant_generator) and on [Zenodo](https://doi.org/10.5281/zenodo.4605951).
 
-![high-level process](img/high_level_process.png)
+It represents an high-level process of the generation mechanism and example of the skill in action. 
 
-It represents an high-level process of the generation mechanism and example of the skill in action.
+![high-level process](img/high_level_process.png)
 
 ## The generator architecture
 
