@@ -13,7 +13,7 @@ To avoid manually creating the generator component configuration file, we provid
 It takes as input the SPARQL endpoint of interest (and the named graph if any). Moreover, users can customize the skill name (param -i which stands for *invocation name*).
 
 ```js
-python generator_configuration.py -e http:\/\/dbpedia.org\/sparql -g http:\/\/dbpedia.org -i "dbpedia demo"
+python generator_configuration.py -e http://dbpedia.org/sparql -g http://dbpedia.org -i "dbpedia demo"
 ```
 It automatically retrieves both classes and relations labels and their URIs, and returns the configuration file that can be directly used to initialize the VA generator.
 As an alternative, the returned configuration file can be manually inspected and revised. For instance, we noticed that by defaul the *label* property were attached to dbp:label(s) and we changed it with rdfs:label.
@@ -50,10 +50,10 @@ As an alternative, the returned configuration file can be manually inspected and
     "lang": "en",
     "result_limit": 5, 
     "entity": {
-	\<label\> : [\<URL\>, \.\.\.],
-        "synonyms" : [\<synonym\>, \.\.\.]
+	<label> : [<URL>, ...],
+        "synonyms" : [<synonym>, ...]
     },
-    "property": {\.\.\.}
+    "property": {...}
 }
 ```
 2. Users can run the generator
