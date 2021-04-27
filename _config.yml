@@ -1,3 +1,5 @@
 theme: jekyll-theme-time-machine
 title: KGQA by VA
-url: https://github.com/mariaangelapellegrino/virtual_assistant_generator
+description: A single page website presenting an automatic approach to generate Virtual Assistant (VA) extensions behaving as Knowledge Graphs (KGs) Question-answering (QA) systems.
+site:
+	url: https://github.com/mariaangelapellegrino/virtual_assistant_generator
