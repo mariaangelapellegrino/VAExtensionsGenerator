@@ -27,7 +27,6 @@ As an alternative, the returned configuration file can be manually inspected and
 - the VA extension language (*en* and *it* are supported at the moment, but the language management mechanism is designed to be easily extendend with further languages),
 - the number of listed result in the reply,
 - the specification of a (complete or partial) set of values that entities and properties can assume as a dictionary
-
 ```json
 {
     "invocation_name": "dbpedia demo", 
